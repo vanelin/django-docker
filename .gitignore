@@ -1,6 +1,9 @@
 # FOLDERS
-django_env/
-dbdata/pgdb/
+!django_env/
+django_env/*
+
+dbdata/pgdb/*
+!dbdata/pgdb/
 
 ### OSX ###
 .DS_Store
@@ -85,6 +88,5 @@ target/
 *.pot
 *.pyc
 __pycache__/
-local_settings.py
 
 .env
