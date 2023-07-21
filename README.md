@@ -6,7 +6,7 @@
 $ pip3 install virtualenv
 $ python3 -m venv django_env
 
-#activate
+# activate
 $ source django_env/bin/activate
 
 # deactivate
@@ -19,14 +19,11 @@ $ rm -rf django_env
 ## Run Django app in Docker
 ```bash
 $ cd zday
-$ docker-compose up --build -d  
+$ docker-compose up --build -d
+$ docker-compose up -d
 ```
 ## Verify application functionality
 ```bash
-$ cd zday
-$ docker-compose up --build -d
-$ docker-compose up -d
-
 $ docker-compose ps 
 NAME                IMAGE               PORTS
 app                 django-app:latest   8000/tcp
