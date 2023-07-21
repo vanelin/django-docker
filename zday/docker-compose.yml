@@ -1,0 +1,33 @@
+version: "3.9"
+
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    ports:
+    - "80:80"
+    volumes:
+    - "/Users/user/devops/zday/nginx-conf/:/etc/nginx/conf.d/"
+
+  app:
+    image: django-app:latest
+    build: .
+    container_name: app
+    hostname: app
+#    ports:
+#    - "8000:8000"
+    depends_on:
+      - pgdb
+    volumes:
+      - "/Users/user/devops/zday/dbdata/local_settings.py:/opt/zday/zday/local_settings.py"
+
+  pgdb:
+    image: postgres:alpine
+    container_name: pgdb
+    hostname: pgdb
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      PGDATA: /var/lib//postgresql/data/pgdb
+    volumes:
+      - "/Users/user/devops/zday/dbdata:/var/lib/postgresql/data"
