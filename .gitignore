@@ -1,9 +1,10 @@
-# FOLDERS
-!django_env/
+# Ignore contents of these folders
 django_env/*
-
 dbdata/pgdb/*
-!dbdata/pgdb/
+
+# But keep the empty folders themselves
+!django_env/.gitkeep
+!dbdata/pgdb/.gitkeep
 
 ### OSX ###
 .DS_Store
